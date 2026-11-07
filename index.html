@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1.second-highest score
+
+        function secondHighest(scores) {
+            let highest = null;
+            let second= null;
+
+            for(const score of scores) {
+                if(highest === null || score > highest){
+                    second = highest;
+                    highest = score;
+                } else if (score !== highest && (second === null || score > second)){
+                    second = score;
+                }
+            }
+
+            return second;
+        }
+
+        //2. Remove duplicate product IDs
+
+        function removeDuplicate(ids) {
+            const uniqueIds = [];
+
+            for (const id of ids){
+                if (!uniqueIds.includes(id)){
+                    uniqueIds.push(id);
+                }
+            }
+
+            return uniqueIds;
+        }
+
+        //3. Count character frequency
+
+        function countcharacterFrequency(text){
+            const frequencies = {};
+
+            for(const character of text){
+                frequencies[character] = (frequencies[character] || 0) + 1;
+                
+            }
+            return frequencies;
+        }
+        console.log(countcharacterFrequency(keyword));
+
+        // 4. Reverse a string
+
+        function reverseString(text) {
+            let reversed = "";
+
+            for (const character of text){
+                reversed = character + reversed;
+            }
+
+            return reversed;
+        }
+        console.log(reverseString("developer"));
+
+        // 5. Finding the missing roll number
+
+        function findMissingRollNumber(rollNumbers, n){
+            const expectedSum = (n * (n + 1)) / 2;
+            const actualSum = rollNumbers.reduce((sum, number) => sum +number, 0);
+
+            return expectedSum - actualSum;
+        }
+
+        console.log(findMissingRollNumber([1, 2, 3, 5, 6], 6));
+
+
+        //6. Check whether text is palindrome
+
+        function isPalindrome(text) {
+            let left = 0;
+            let right = text.length - 1;
+
+            while (left < right) {
+                if (text[left] !== text[right]) {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+
+            return true;
+
+        }
+        console.log(isPalindrome("madam"));
+
+
+        //7. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
